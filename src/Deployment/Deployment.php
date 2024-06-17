@@ -116,9 +116,10 @@ class Deployment
         if (false === $filesystem->exists($deployDirectory)) {
             throw new \Exception(sprintf('Deploy directory "%s" does not exist.', $deployDirectory));
         }
-        if (false === str_starts_with($deployDirectory, sprintf('/home/%s/htdocs', $systemUserName))) {
-            throw new \Exception(sprintf('System User "%s" is not part of the deploy directory: "%s"', $systemUserName, $deployDirectory));
-        }
+//        Remove the check because we want to use this outside of CloudPanel.
+//        if (false === str_starts_with($deployDirectory, sprintf('/home/%s/htdocs', $systemUserName))) {
+//            throw new \Exception(sprintf('System User "%s" is not part of the deploy directory: "%s"', $systemUserName, $deployDirectory));
+//        }
         $overlaysDirectory = $this->config->getOverlaysDirectory();
         if (false === $filesystem->exists($overlaysDirectory)) {
             throw new \Exception(sprintf('Overlays directory "%s" does not exist.', $overlaysDirectory));
