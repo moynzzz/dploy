@@ -115,10 +115,10 @@ class Compiler
         $phar->setStub($stub);
         //$phar->compressFiles(\Phar::GZ);
         $phar->stopBuffering();
-        $privateKey = $this->getPrivateKey();
-        $private = openssl_get_privatekey(file_get_contents($privateKey));
-        openssl_sign((string)file_get_contents($pharFile), $signature, $private, OPENSSL_ALGO_SHA384);
-        file_put_contents($signatureFile, base64_encode($signature));
+//        $privateKey = $this->getPrivateKey();
+//        $private = openssl_get_privatekey(file_get_contents($privateKey));
+//        openssl_sign((string)file_get_contents($pharFile), $signature, $private, OPENSSL_ALGO_SHA384);
+//        file_put_contents($signatureFile, base64_encode($signature));
         rename($pharFile, $finalFile);
         unset($phar);
     }
