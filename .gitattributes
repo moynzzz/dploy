@@ -8,6 +8,7 @@
 *.js text eol=lf
 *.json text eol=lf
 *.md text eol=lf
+*.env text eol=lf
 
 # Binary files are excluded
 *.jpg binary
